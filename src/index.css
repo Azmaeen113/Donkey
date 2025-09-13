@@ -1,0 +1,288 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DONKEY COIN PREMIUM DESIGN SYSTEM */
+
+@layer base {
+  :root {
+    /* Premium Dark Theme */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Neon Green Primary */
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 10%;
+
+    /* Rich Gray Secondary */
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+
+    /* Subtle Muted */
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 65%;
+
+    /* Swamp Green Accent */
+    --accent: 85 40% 25%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 120 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom DONKEY Colors */
+    --neon-green: 120 100% 50%;
+    --swamp-green: 85 40% 25%;
+    --gold: 51 100% 50%;
+    --deep-black: 0 0% 4%;
+    --rich-gray: 0 0% 10%;
+
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--neon-green)) 0%, hsl(var(--swamp-green)) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(var(--deep-black)) 0%, hsl(var(--swamp-green) / 0.2) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+
+    /* Glows and Effects */
+    --glow-neon: 0 0 30px hsl(var(--neon-green) / 0.5);
+    --glow-gold: 0 0 25px hsl(var(--gold) / 0.4);
+    --shadow-premium: 0 20px 40px -10px hsl(0 0% 0% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Dark mode is default for DONKEY */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Premium Button Variants */
+  .btn-hero {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold text-lg;
+    @apply hover:scale-105 transition-all duration-300;
+    box-shadow: var(--glow-neon);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary/80 text-secondary-foreground px-6 py-3 rounded-lg font-medium;
+    @apply hover:bg-secondary transition-all duration-300 border border-border;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium;
+    @apply hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+
+  /* Premium Card Variants */
+  .card-premium {
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded-xl p-6;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-premium);
+  }
+
+  .card-glow {
+    @apply bg-card/90 backdrop-blur-sm border border-primary/20 rounded-xl p-6;
+    box-shadow: var(--glow-neon);
+  }
+
+  /* Text Effects */
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes particle-float {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* Wooden Frame Styles */
+.wooden-frame {
+  position: relative;
+  box-shadow: 
+    0 0 0 2px #92400e,
+    0 0 0 4px #a16207,
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.wooden-frame::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #92400e 0%, #a16207 25%, #ca8a04 50%, #a16207 75%, #92400e 100%);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.wooden-frame::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* CometCard Styles */
+.comet-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  perspective: 1000px;
+  transform: rotateY(-2deg) rotateX(1deg) translateZ(0px);
+}
+
+.comet-card:hover {
+  transform: rotateY(15deg) rotateX(10deg) translateZ(20px);
+}
+
+.comet-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(255, 255, 255, 0.08) 25%, 
+    rgba(0, 0, 0, 0.15) 50%, 
+    rgba(0, 0, 0, 0.08) 75%, 
+    rgba(255, 255, 255, 0.15) 100%);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  transform: translateZ(-1px);
+}
+
+.comet-card:hover::before {
+  opacity: 1;
+}
+
+.comet-card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(255, 255, 255, 0.1) 25%, 
+    rgba(0, 0, 0, 0.2) 50%, 
+    rgba(0, 0, 0, 0.1) 75%, 
+    rgba(255, 255, 255, 0.2) 100%);
+  border-radius: inherit;
+  z-index: -2;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  transform: translateZ(-2px);
+}
+
+.comet-card:hover::after {
+  opacity: 0.6;
+}
+
+/* Enhanced shadow effects for tilting */
+.comet-card {
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.comet-card:hover {
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
