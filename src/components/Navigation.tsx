@@ -28,9 +28,9 @@ const Navigation = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-gradient">
+          <div className="text-lg sm:text-xl md:text-2xl font-bold text-gradient">
             $DONKEY
           </div>
 
@@ -67,7 +67,7 @@ const Navigation = () => {
             </button>
           </div>
 
-          <Button className="btn-hero">
+          <Button className="btn-hero text-sm sm:text-base px-3 sm:px-4 py-2">
             Buy $DONKEY
           </Button>
         </div>
