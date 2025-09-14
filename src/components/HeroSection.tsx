@@ -77,11 +77,17 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-              <Button className="btn-hero text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
+              <Button 
+                className="btn-hero text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
+                onClick={() => window.open('https://raydium.io/swap/?inputMint=sol&outputMint=ALWPdTS8K9KHnjbNmaHXrgS56AfFm8y1wBEBypmB1KS', '_blank')}
+              >
                 Buy Now
                 <ExternalLink className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
-              <Button className="btn-outline text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3">
+              <Button 
+                className="btn-outline text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
+                onClick={() => window.open('https://dexscreener.com/solana/9fyq5tznx33ay6epr6dscpksxtzdjzwtye4csxpczlgl', '_blank')}
+              >
                 View Chart
               </Button>
             </div>
@@ -106,14 +112,21 @@ const HeroSection = () => {
 
             {/* Social Links */}
             <div className="flex gap-3 sm:gap-4 justify-center lg:justify-start">
-              <Button variant="ghost" size="sm" className="hover:text-primary text-xs sm:text-sm px-2 sm:px-3">
-                Twitter
-              </Button>
-              <Button variant="ghost" size="sm" className="hover:text-primary text-xs sm:text-sm px-2 sm:px-3">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="hover:text-primary text-xs sm:text-sm px-2 sm:px-3"
+                onClick={() => window.open('https://t.me/enterdonkey', '_blank')}
+              >
                 Telegram
               </Button>
-              <Button variant="ghost" size="sm" className="hover:text-primary text-xs sm:text-sm px-2 sm:px-3">
-                Discord
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="hover:text-primary text-xs sm:text-sm px-2 sm:px-3"
+                onClick={() => window.open('https://jup.ag/', '_blank')}
+              >
+                Jupiter
               </Button>
             </div>
           </div>

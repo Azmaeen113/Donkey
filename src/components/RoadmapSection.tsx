@@ -202,10 +202,16 @@ const RoadmapSection = () => {
                 The journey to the moon starts with a single hop... or in our case, a single bray!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="btn-hero">
+                <button 
+                  className="btn-hero"
+                  onClick={() => window.open('https://raydium.io/swap/?inputMint=sol&outputMint=ALWPdTS8K9KHnjbNmaHXrgS56AfFm8y1wBEBypmB1KS', '_blank')}
+                >
                   Buy $DONKEY Now
                 </button>
-                <button className="btn-outline">
+                <button 
+                  className="btn-outline"
+                  onClick={() => window.open('https://t.me/enterdonkey', '_blank')}
+                >
                   Join Community
                 </button>
               </div>

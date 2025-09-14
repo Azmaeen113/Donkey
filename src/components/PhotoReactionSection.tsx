@@ -28,7 +28,6 @@ const PhotoReactionSection = () => {
   const [reactions, setReactions] = useState<Reaction[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [reactionIntensity, setReactionIntensity] = useState(3);
   const [selectedDonkey, setSelectedDonkey] = useState<DonkeyExpression | null>(null);
   const [showExpressionBanner, setShowExpressionBanner] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -168,7 +167,7 @@ const PhotoReactionSection = () => {
     if (!uploadedImage) return;
     
     const newReactions: Reaction[] = [];
-    const numReactions = Math.min(reactionIntensity, 5);
+    const numReactions = 3; // Fixed number of reactions
     
     for (let i = 0; i < numReactions; i++) {
       newReactions.push({
@@ -461,29 +460,6 @@ const PhotoReactionSection = () => {
                 <h3 className="text-xl font-bold mb-4 text-gradient">Reaction Controls</h3>
                 
                 <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Reaction Intensity: {reactionIntensity}
-                    </label>
-                    <input
-                      type="range"
-                      min="1"
-                      max="5"
-                      value={reactionIntensity}
-                      onChange={(e) => {
-                        const newIntensity = Number(e.target.value);
-                        setReactionIntensity(newIntensity);
-                        // Regenerate reactions with new intensity if image is uploaded
-                        if (uploadedImage) {
-                          setTimeout(() => {
-                            generateRandomReactions();
-                          }, 100);
-                        }
-                      }}
-                      className="w-full h-2 bg-muted rounded-lg appearance-none cursor-pointer"
-                      disabled={!uploadedImage}
-                    />
-                  </div>
                   
                   <div className="grid grid-cols-2 gap-3">
                     <Button

@@ -31,14 +31,17 @@ const Footer = () => {
                 Join the loudest community in crypto!
               </p>
               <div className="flex gap-4">
-                <button className="text-muted-foreground hover:text-primary transition-colors">
-                  Twitter
-                </button>
-                <button className="text-muted-foreground hover:text-primary transition-colors">
+                <button 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => window.open('https://t.me/enterdonkey', '_blank')}
+                >
                   Telegram
                 </button>
-                <button className="text-muted-foreground hover:text-primary transition-colors">
-                  Discord
+                <button 
+                  className="text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => window.open('https://jup.ag/', '_blank')}
+                >
+                  Jupiter
                 </button>
               </div>
             </div>
@@ -84,16 +87,28 @@ const Footer = () => {
             <div>
               <h3 className="font-bold mb-4">Resources</h3>
               <div className="space-y-2">
-                <button className="block text-muted-foreground hover:text-primary transition-colors">
+                <button 
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => window.open('https://dexscreener.com/solana/9fyq5tznx33ay6epr6dscpksxtzdjzwtye4csxpczlgl', '_blank')}
+                >
                   Chart
                 </button>
-                <button className="block text-muted-foreground hover:text-primary transition-colors">
+                <button 
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => window.open('https://raydium.io/swap/?inputMint=sol&outputMint=ALWPdTS8K9KHnjbNmaHXrgS56AfFm8y1wBEBypmB1KS', '_blank')}
+                >
                   Buy on Raydium
                 </button>
-                <button className="block text-muted-foreground hover:text-primary transition-colors">
+                <button 
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => window.open('https://jup.ag/', '_blank')}
+                >
                   Buy on Jupiter
                 </button>
-                <button className="block text-muted-foreground hover:text-primary transition-colors">
+                <button 
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                  onClick={() => window.open('https://t.me/enterdonkey', '_blank')}
+                >
                   Community
                 </button>
               </div>

@@ -48,7 +48,7 @@ const HowToBuySection = () => {
       title: "Go to Raydium or Jupiter",
       description: "Open a Solana DEX in your browser",
       action: "Open Raydium",
-      link: "https://raydium.io/swap",
+      link: "https://raydium.io/swap/?inputMint=sol&outputMint=ALWPdTS8K9KHnjbNmaHXrgS56AfFm8y1wBEBypmB1KS",
       icon: <ExternalLink className="w-8 h-8" />
     },
     {
@@ -145,11 +145,17 @@ const HowToBuySection = () => {
           {/* Quick Buy Buttons */}
           <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button className="btn-hero text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+              <Button 
+                className="btn-hero text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+                onClick={() => window.open('https://raydium.io/swap/?inputMint=sol&outputMint=ALWPdTS8K9KHnjbNmaHXrgS56AfFm8y1wBEBypmB1KS', '_blank')}
+              >
                 Buy on Raydium
                 <ExternalLink className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
-              <Button className="btn-outline text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+              <Button 
+                className="btn-outline text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+                onClick={() => window.open('https://jup.ag/', '_blank')}
+              >
                 Buy on Jupiter
                 <ExternalLink className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
