@@ -181,7 +181,7 @@ const PhotoReactionSection = () => {
     }
     
     setReactions(newReactions);
-  }, [uploadedImage, reactionIntensity]);
+  }, [uploadedImage]);
 
   const handleFileUpload = useCallback((file: File) => {
     if (!file.type.startsWith('image/')) {
